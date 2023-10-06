@@ -12,7 +12,7 @@
         <router-link to="/skull">Explore</router-link>
       </div>
       <div class = "logo">
-        <img src="./IELOGO.png" alt="Logo">
+        <img src="../assets/IE-University-logo.jpg" alt="Logo">
       </div>
   
       <!-- <div class="centered-box creative-box">
