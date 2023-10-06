@@ -12,8 +12,7 @@
         <router-link to="/skull">Explore</router-link>
       </div>
       <div class = "logo">
-        <img src="./" alt="">
-
+        <img src="./IELOGO.png" alt="Logo">
       </div>
   
       <!-- <div class="centered-box creative-box">
@@ -51,5 +50,15 @@
     max-width: 300px;
     background-color: #f5f5f5;
   }
+  .logo {
+  position: absolute;
+  bottom: 10px; /* Adjust the distance from the bottom as needed */
+  left: 10px; /* Adjust the distance from the left as needed */
+}
+
+.logo img {
+  width: 50px; /* Set the width of your logo */
+  height: auto; /* Maintain aspect ratio */
+}
   </style>
   
