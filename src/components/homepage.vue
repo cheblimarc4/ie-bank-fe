@@ -30,6 +30,10 @@
   
   <style scoped>
   .home-page {
+    background-image: url(./IELOGO.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     display: flex;
     justify-content: center;
     align-items: center;
