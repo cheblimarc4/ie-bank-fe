@@ -11,6 +11,10 @@
         <p>Check out our interactive Skull component for fun!</p>
         <router-link to="/skull">Explore</router-link>
       </div>
+      <div class = "logo">
+        <img src="./" alt="">
+
+      </div>
   
       <!-- <div class="centered-box creative-box">
         <h2>Be Creative!</h2>
@@ -30,10 +34,7 @@
   
   <style scoped>
   .home-page {
-    background-image: url(./IELOGO.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
