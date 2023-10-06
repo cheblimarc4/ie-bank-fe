@@ -1,5 +1,6 @@
 <template>
     <div class="home-page">
+        <div><h1>Welcome To Your Home Page</h1></div>
       <div class="centered-box">
         <h2>Welcome to the Bank App</h2>
         <p>Would you like to go to the Accounts page to manage your finances?</p>
@@ -33,22 +34,26 @@
   
   <style scoped>
   .home-page {
-    background-color: blue;
+    background-color: lightblue;
+    position: relative;
+    min-height: calc(100vh - 40px); /* Adjust the subtraction value as needed */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     flex-direction: column;
+    margin: 0; 
   }
   
   .centered-box {
     text-align: center;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid lightpink;
     border-radius: 5px;
     margin: 10px;
     max-width: 300px;
     background-color: #f5f5f5;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Add a box shadow */
+
   }
   .logo {
   position: absolute;
@@ -57,8 +62,25 @@
 }
 
 .logo img {
-  width: 50px; /* Set the width of your logo */
+  width: 100px; /* Set the width of your logo */
   height: auto; /* Maintain aspect ratio */
 }
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+h1 {
+    font-family: 'Monaco', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+
   </style>
   
