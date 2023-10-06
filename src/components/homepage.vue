@@ -12,11 +12,11 @@
         <router-link to="/skull">Explore</router-link>
       </div>
   
-      <div class="centered-box creative-box">
+      <!-- <div class="centered-box creative-box">
         <h2>Be Creative!</h2>
         <p>Add your own creative content here.</p>
         <router-link to="/creative-content">Get Inspired</router-link>
-      </div>
+      </div> -->
     <router-view></router-view>
 
     </div>
@@ -45,13 +45,6 @@
     margin: 10px;
     max-width: 300px;
     background-color: #f5f5f5;
-  }
-  
-  .creative-box {
-    /* Add your creative styling here */
-    background-color: #ffcc00; /* Example background color */
-    color: #333; /* Example text color */
-    /* Add any other custom styles */
   }
   </style>
   

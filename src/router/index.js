@@ -26,11 +26,6 @@ const routes = [
     name: 'AppAccounts',
     component: AppAccounts
   },
-  {
-    path: '/creative-content',
-    name: 'CreativeContent',
-    component: CreativeContent,
-  },
 ]
 
 const router = new VueRouter({
