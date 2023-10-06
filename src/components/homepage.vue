@@ -1,5 +1,7 @@
+
 <template>
     <div class="home-page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <div><h1>Welcome To Your Home Page</h1></div>
       <div class="centered-box">
         <h2>Welcome to the Bank App</h2>
@@ -91,6 +93,12 @@ h1 {
     font-size: 35px;
     font-weight: bold;
 }
+/* Reset margins and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 
   </style>
   
