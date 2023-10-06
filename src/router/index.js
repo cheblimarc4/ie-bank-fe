@@ -4,6 +4,7 @@ import Skull from '../components/Skull.vue'
 import AppAccounts from '../components/AppAccounts.vue'
 import Home from '../components/homepage.vue'
 
+
 Vue.use(VueRouter)
 
 const routes = [
