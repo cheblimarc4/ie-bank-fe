@@ -33,16 +33,26 @@
   </script>
   
   <style scoped>
-  .home-page {
-    background-color: lightblue;
-    position: relative;
-    min-height: calc(100vh - 40px); /* Adjust the subtraction value as needed */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0; 
-  }
+  /* Remove default margin and padding from the body and html elements */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply the background color and set min-height to 100vh on your .home-page element */
+.home-page {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh; /* Adjust the subtraction value as needed */
+  margin: 0;
+  padding: 0;
+}
+
+/* Rest of your styles for .centered-box, .logo, and text elements */
+
   
   .centered-box {
     text-align: center;
