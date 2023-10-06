@@ -1,6 +1,16 @@
 <template>
     <div><h1>Welcome To Your Home Page</h1>
     <div class="home-page">
+        <div class = "menu">
+            <div class = "dropdown">
+                <button class = "dropbtn">Menu</button>
+                    <div class = "dropdown-content">
+                        <router-link to="/accounts">Accounts</router-link>
+                        <router-link to="/skull">Skull</router-link>
+                        <a href="https://github.com/cheblimarc4/ie-bank-fe" target="blank"> Github Repo</a>
+                    </div>
+            </div>
+        </div>
       <div class="content">
         <div class="centered-box">
           <h2>Welcome to the Bank App</h2>
@@ -10,7 +20,7 @@
   
         <div class="centered-box">
           <h2>Explore the Skull Component</h2>
-          <p>Check out our interactive Skull component for fun!</p>
+          <p class = "exp">Check out our interactive Skull component for fun!</p>
           <router-link to="/skull">Explore</router-link>
         </div>
       </div>
@@ -36,6 +46,62 @@
   </script>
   
   <style scoped>
+  .menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+}
+
+/* Dropdown button style */
+.dropbtn {
+  background-color: #f5f5f5;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Dropdown container style */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+}
+
+/* Change color on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style for the GitHub link */
+.dropdown-content a[href^="https://github.com"] {
+  color: #0366d6; /* GitHub link color */
+}
 /* Reset margins and padding for all elements */
 * {
   margin: 0;
@@ -54,7 +120,7 @@ body {
 .home-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: ;
   align-items: center;
   height: 100vh;
 }
@@ -75,18 +141,18 @@ h1 {
   align-items: center;
   flex-wrap: wrap; /* Allow boxes to wrap to the next row on smaller screens */
 }
-
-/* Style for the centered boxes */
 .centered-box {
   text-align: center;
   padding: 20px;
-  border: 1px solid lightpink;
+  border: 1px solid blue;
   border-radius: 5px;
   margin: 10px;
   width: 300px; /* Fixed width for both centered boxes */
+  height: 200px; /* Fixed height for both centered boxes */
   background-color: #f5f5f5;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Add a box shadow */
 }
+
 
 /* Style for the logo */
 .logo {
