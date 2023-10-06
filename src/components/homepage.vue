@@ -1,6 +1,6 @@
 <template>
+    <div><h1>Welcome To Your Home Page</h1>
     <div class="home-page">
-      <h1>Welcome To Your Home Page</h1>
       <div class="content">
         <div class="centered-box">
           <h2>Welcome to the Bank App</h2>
@@ -24,7 +24,9 @@
       </div> -->
       <router-view></router-view>
     </div>
+    </div>
   </template>
+  
   
   
   <script>
@@ -63,6 +65,7 @@ h1 {
   font-size: 35px;
   font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* Container for the centered boxes */
@@ -80,7 +83,7 @@ h1 {
   border: 1px solid lightpink;
   border-radius: 5px;
   margin: 10px;
-  max-width: 300px;
+  width: 300px; /* Fixed width for both centered boxes */
   background-color: #f5f5f5;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Add a box shadow */
 }
@@ -110,4 +113,5 @@ p {
   line-height: 1.5;
 }
 </style>
+
   
