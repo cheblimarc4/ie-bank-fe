@@ -3,13 +3,17 @@ import VueRouter from 'vue-router'
 import Skull from '../components/Skull.vue'
 import AppAccounts from '../components/AppAccounts.vue'
 import Home from '../components/homepage.vue'
-
+import CreativeContent from '../components/CreativeContent.vue';
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    redirect: '/homepage', // Redirect the root URL to the homepage route
+  },
+  {
+    path: '/homepage',
     name: 'homepage',
     component: Home,
   },
