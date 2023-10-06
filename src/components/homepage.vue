@@ -17,6 +17,8 @@
         <p>Add your own creative content here.</p>
         <router-link to="/creative-content">Get Inspired</router-link>
       </div>
+    <router-view></router-view>
+
     </div>
   </template>
   
