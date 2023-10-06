@@ -9,7 +9,7 @@
       <div class="centered-box">
         <h2>Explore the Skull Component</h2>
         <p>Check out our interactive Skull component for fun!</p>
-        <router-link to="/skull-component">Explore</router-link>
+        <router-link to="/skull">Explore</router-link>
       </div>
   
       <div class="centered-box creative-box">
