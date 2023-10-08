@@ -24,6 +24,7 @@
           <router-link to="/skull">Explore</router-link>
         </div>
       </div>
+     
       <div class="logo">
         <img src="../assets/IE-University-logo.jpg" alt="Logo">
       </div>
@@ -118,9 +119,10 @@ body {
 
 /* Center the content vertically and horizontally */
 .home-page {
+    background: linear-gradient(to bottom, #87CEEB, #0072BB);
   display: flex;
   flex-direction: column;
-  justify-content: ;
+  justify-content:  center;
   align-items: center;
   height: 100vh;
 }
