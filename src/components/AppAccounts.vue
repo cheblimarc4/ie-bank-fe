@@ -6,10 +6,12 @@
           <h1>Accounts</h1>
           <hr />
           <br />
-          <!-- Alert Message -->
+          <!-- Allert Message -->
           <b-alert v-if="showMessage" variant="success" show>{{
             message
           }}</b-alert>
+          <!-- b-alert v-if="error" variant="danger" show>{{ error }}</b-alert-->
+
           <button
             type="button"
             class="btn btn-success btn-sm"
@@ -25,7 +27,6 @@
                 <th scope="col">Account Number</th>
                 <th scope="col">Account Balance</th>
                 <th scope="col">Account Currency</th>
-                <th scope="col">Account Country</th>
                 <th scope="col">Account Status</th>
                 <th scope="col">Actions</th>
               </tr>
@@ -68,6 +69,9 @@
               </tr>
             </tbody>
           </table>
+          <footer class="text-center">
+            Copyright &copy; All Rights Reserved.
+          </footer>
         </div>
       </div>
       <b-modal
@@ -106,6 +110,7 @@
             >
             </b-form-input>
           </b-form-group>
+
           <b-button type="submit" variant="outline-info">Submit</b-button>
         </b-form>
       </b-modal>
@@ -150,7 +155,7 @@ export default {
       accounts: [],
       createAccountForm: {
         name: "",
-        currency: "", // Add the 'country' field
+        currency: "",
       },
       editAccountForm: {
         id: "",
@@ -161,8 +166,138 @@ export default {
     };
   },
   methods: {
-    // ... Your other methods remain the same
+    /***************************************************
+     * RESTful requests
+     ***************************************************/
+
+    //GET function
+    RESTgetAccounts() {
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts`;
+      axios
+        .get(path)
+        .then((response) => {
+          this.accounts = response.data.accounts;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    },
+
+    // POST function
+    RESTcreateAccount(payload) {
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts`;
+      axios
+        .post(path, payload)
+        .then((response) => {
+          this.RESTgetAccounts();
+          // For message alert
+          this.message = "Account Created succesfully!";
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
+        })
+        .catch((error) => {
+          console.error(error);
+          this.RESTgetAccounts();
+        });
+    },
+
+    // Update function
+    RESTupdateAccount(payload, accountId) {
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts/${accountId}`;
+      axios
+        .put(path, payload)
+        .then((response) => {
+          this.RESTgetAccounts();
+          // For message alert
+          this.message = "Account Updated succesfully!";
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
+        })
+        .catch((error) => {
+          console.error(error);
+          this.RESTgetAccounts();
+        });
+    },
+
+    // Delete account
+    RESTdeleteAccount(accountId) {
+      const path = `${process.env.VUE_APP_ROOT_URL}/accounts/${accountId}`;
+      axios
+        .delete(path)
+        .then((response) => {
+          this.RESTgetAccounts();
+          // For message alert
+          this.message = "Account Deleted succesfully!";
+          // To actually show the message
+          this.showMessage = true;
+          // To hide the message after 3 seconds
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 3000);
+        })
+        .catch((error) => {
+          console.error(error);
+          this.RESTgetAccounts();
+        });
+    },
+
+    /***************************************************
+     * FORM MANAGEMENT
+     * *************************************************/
+
+    // Initialize forms empty
+    initForm() {
+      this.createAccountForm.name = "";
+      this.createAccountForm.currency = "";
+      this.editAccountForm.id = "";
+      this.editAccountForm.name = "";
+    },
+
+    // Handle submit event for create account
+    onSubmit(e) {
+      e.preventDefault(); //prevent default form submit form the browser
+      this.$refs.addAccountModal.hide(); //hide the modal when submitted
+      const payload = {
+        name: this.createAccountForm.name,
+        currency: this.createAccountForm.currency,
+      };
+      this.RESTcreateAccount(payload);
+      this.initForm();
+    },
+
+    // Handle submit event for edit account
+    onSubmitUpdate(e) {
+      e.preventDefault(); //prevent default form submit form the browser
+      this.$refs.editAccountModal.hide(); //hide the modal when submitted
+      const payload = {
+        name: this.editAccountForm.name,
+      };
+      this.RESTupdateAccount(payload, this.editAccountForm.id);
+      this.initForm();
+    },
+
+    // Handle edit button
+    editAccount(account) {
+      this.editAccountForm = account;
+    },
+
+    // Handle Delete button
+    deleteAccount(account) {
+      this.RESTdeleteAccount(account.id);
+    },
   },
+
+  /***************************************************
+   * LIFECYClE HOOKS
+   ***************************************************/
   created() {
     this.RESTgetAccounts();
   },
