@@ -11,6 +11,7 @@ on:
 
 env:
   FRONTEND_WEBAPP_DEV: cheblimarc4-fe-dev
+  FRONTEND_WEBAPP_PROD: cheblimarc4-fe-prod
   FRONTEND_WEBAPP_UAT: cheblimarc4-fe-uat
 
 
