@@ -111,10 +111,10 @@
               required
             >
             </b-form-input>
-            </b-form-group>
-            <b-form-group
+          </b-form-group>
+          <b-form-group
             id="form-country-group"
-            label="Account Country:"
+            label="Country:"
             label-for="form-country-input"
           >
             <b-form-input
@@ -172,6 +172,7 @@ export default {
       createAccountForm: {
         name: "",
         currency: "",
+        country: "",
       },
       editAccountForm: {
         id: "",
