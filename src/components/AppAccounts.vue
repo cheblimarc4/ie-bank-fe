@@ -87,8 +87,7 @@
           <b-form-group
             id="form-name-group"
             label="Account Name:"
-            label-for="form-name-input"
-          >
+            label-for="form-name-input"          >
             <b-form-input
               id="form-name-input"
               type="text"
@@ -281,6 +280,7 @@ export default {
 
     // Handle submit event for create account
     onSubmit(e) {
+      console.log('Button clicked!')
       e.preventDefault(); //prevent default form submit form the browser
       this.$refs.addAccountModal.hide(); //hide the modal when submitted
       const payload = {
