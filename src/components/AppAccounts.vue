@@ -193,6 +193,7 @@ export default {
         .get(path)
         .then((response) => {
           this.accounts = response.data.accounts;
+          console.log("Accounts fetched:", this.accounts);
         })
         .catch((error) => {
           console.error(error);
