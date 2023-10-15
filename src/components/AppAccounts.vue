@@ -192,6 +192,7 @@ export default {
       axios
         .get(path)
         .then((response) => {
+          console.log("Full API Response:", response.data);
           this.accounts = response.data.accounts;
           console.log("Accounts fetched:", this.accounts);
         })
