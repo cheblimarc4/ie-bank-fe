@@ -17,7 +17,9 @@ export default
         name: 'Skull',
         data() {
             return {
-                msg: 'Hi! This is the skull component 💀'
+                msg: 'Hi! This is the skull component 💀',
+                environment: '',
+                env_var_file_name: ''
             }
         },
         methods:
